@@ -11,21 +11,38 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Number aNumber=new Number();
-            Thread t=new Thread(aNumber.PrintNumbers);
-            t.Start();
+            
+            //Thread t=new Thread(aNumber.PrintNumber);
+            //t.Start();
+
+            Console.WriteLine("Please Write number");
+            int target = Convert.ToInt32(Console.ReadLine());
+            Number aNumber = new Number(target);
+            Thread tParameter=new Thread(aNumber.PrintParameterNumber);
+            tParameter.Start();
 
         }
     }
 
     class Number
     {
-        public void PrintNumbers()
+        int _target;
+
+        public Number(int target)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(i);
-            }
+            this._target = target;
+        }
+        public  void PrintParameterNumber()
+        {
+            //int number = 0;
+            //if (int.TryParse(target.ToString(),out number))
+            //{
+                for (int i = 0; i <= _target; i++)
+                {
+                    Console.WriteLine(i);
+                }
+            //}
+
         }
     }
 }
