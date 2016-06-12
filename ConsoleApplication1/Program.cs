@@ -17,9 +17,6 @@ namespace ConsoleApplication1
         public static void Main(string[] args)
         {
             
-            //Thread t=new Thread(aNumber.PrintNumber);
-            //t.Start();
-
             Console.WriteLine("Please Write number");
             int target = Convert.ToInt32(Console.ReadLine());
             SumOfNumbersCallBack callback = new SumOfNumbersCallBack(PrintSum);
